@@ -16,3 +16,7 @@ variable "env-tag" {
 variable "eks_cluster_name" {
   default = "dev-eks-cluster"
 }
+
+variable "aws_credenital_profile" {
+  default = "beancrunch"
+}
