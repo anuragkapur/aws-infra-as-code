@@ -36,3 +36,20 @@ module "eks-cluster" {
     Environment = "${var.env-tag}"
   }
 }
+
+//resource "aws_autoscaling_policy" "eks-asg-scale-out" {
+//  count                  = 2
+//  name                   = "eks-asg-scale-out"
+//  scaling_adjustment     = 1
+//  adjustment_type        = "ChangeInCapacity"
+//  policy_type            = "TargetTrackingScaling"
+//  autoscaling_group_name = "${module.eks-cluster.workers_asg_names[count.index]}"
+//
+//  target_tracking_configuration {
+//    predefined_metric_specification {
+//      predefined_metric_type = "ASGAverageCPUUtilization"
+//    }
+//
+//    target_value = 40.0
+//  }
+//}
