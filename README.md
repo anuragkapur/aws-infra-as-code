@@ -29,5 +29,11 @@ env variable for your local environment to be able to communicate with the EKS c
     ```shell script
     $ kb get nodes
     ```   
+   
+# ToDos
+* Monitoring and alerting
+  * auto-scaling notifications
+   
+   
 
 
