@@ -24,11 +24,10 @@ resource "aws_autoscaling_schedule" "evening-stop" {
 }
 
 resource "aws_autoscaling_schedule" "morning-start" {
-  count                  = 2
-  scheduled_action_name  = "asg-morning-start-schedule.${count.index}"
+  scheduled_action_name  = "asg-morning-start-schedule"
   min_size               = "1"
   max_size               = "5"
   desired_capacity       = "1"
   recurrence             = "0 8 * * MON-FRI"
-  autoscaling_group_name = "${module.my-eks-cluster.workers_asg_names[count.index]}"
+  autoscaling_group_name = "${module.my-eks-cluster.workers_asg_names[1]}"
 }
