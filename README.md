@@ -1,7 +1,7 @@
 AWS - Infra as code
 ===================
 
-This repository contains infrastructure code I use to manage my AWS account.
+This repository contains infrastructure code used to manage my AWS account.
 
 ## Pre-requisites
 * Terraform 0.12
