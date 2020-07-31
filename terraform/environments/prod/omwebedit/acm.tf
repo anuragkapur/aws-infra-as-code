@@ -1,4 +1,5 @@
 resource "aws_acm_certificate" "omwebedit_cert" {
+  provider = aws.useast1
   domain_name       = "omwebedit.${var.domain}"
   validation_method = "DNS"
 
@@ -23,10 +24,4 @@ resource "aws_route53_record" "cert_validation" {
   records = [
     aws_acm_certificate.omwebedit_cert.domain_validation_options[0].resource_record_value]
   ttl     = 60
-}
-
-resource "aws_acm_certificate_validation" "cert" {
-  certificate_arn         = aws_acm_certificate.omwebedit_cert.arn
-  validation_record_fqdns = [
-    aws_route53_record.cert_validation.fqdn]
 }
